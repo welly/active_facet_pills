@@ -1,0 +1,8 @@
+{% if facet_links %}
+  {{ attach_library('active_facet_pills/active-facet-pills') }}
+  <ul class="facet-pills">
+    {% for link in facet_links %}
+      <li class="facet-pills__pill"><a class="facet-pills__pill__link" href={{ link.url }}>{{ link.name }}</a></li>
+    {% endfor %}
+  </ul>
+{% endif %}

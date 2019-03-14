@@ -49,6 +49,17 @@ class ActiveFacetPillsBlock extends BlockBase {
               'url' => $r->getUrl()->toString()
             );
           }
+          $children = $r->getChildren();
+          if ($children !== NULL) {
+            foreach ($children as $child) {
+              if (in_array($child->getRawValue(), $active)) {
+                $facetLinks[] = array(
+                  'name' => $child->getDisplayValue(),
+                  'url' => $child->getUrl()->toString()
+                );
+              }
+            }
+          }
         }
       }
     }
